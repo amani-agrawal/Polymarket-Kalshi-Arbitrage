@@ -1,8 +1,8 @@
 2026-04-08 21:12:48 | INFO     | __main__:main:197 - ============================================================
 2026-04-08 21:12:48 | INFO     | __main__:main:198 -   Polymarket x Kalshi Arbitrage Daemon starting up
 2026-04-08 21:12:48 | INFO     | __main__:main:199 - ============================================================
-2026-04-08 21:12:48 | INFO     | __main__:main:200 -   Poly wallet:     0x830447C87C893b19d97d9f1405E08F8d6480542F
-2026-04-08 21:12:48 | INFO     | __main__:main:201 -   Kalshi key ID:   808df12a-b2aa-4206-8338-5c05d5abd399
+2026-04-08 21:12:48 | INFO     | __main__:main:200 -   Poly wallet:     X
+2026-04-08 21:12:48 | INFO     | __main__:main:201 -   Kalshi key ID:   X
 2026-04-08 21:12:48 | INFO     | __main__:main:202 -   DB:              arb.db
 2026-04-08 21:12:48 | INFO     | __main__:main:203 -   Min profit:      2.0% / $0.5
 2026-04-08 21:12:48 | INFO     | __main__:main:204 -   Max bet size:    $50.0
@@ -111,4 +111,3 @@
 2026-04-08 22:33:57 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.22 below min — skipping pair=12 | DEBUG HELP: yes_ask_volume=719.0 no_ask_volume=55.0 yes_price=0.32 no_price=0.66
 2026-04-08 22:34:28 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
 2026-04-08 22:34:28 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.3 below min — skipping pair=12 | DEBUG HELP: yes_ask_volume=719.0 no_ask_volume=79.0 yes_price=0.32 no_price=0.66
-2026-04-08 22:57:23 | INFO     | __main__:_handle_signal:185 - Signal 2 received — shutting down...
