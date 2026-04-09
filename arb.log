@@ -1,0 +1,114 @@
+2026-04-08 21:12:48 | INFO     | __main__:main:197 - ============================================================
+2026-04-08 21:12:48 | INFO     | __main__:main:198 -   Polymarket x Kalshi Arbitrage Daemon starting up
+2026-04-08 21:12:48 | INFO     | __main__:main:199 - ============================================================
+2026-04-08 21:12:48 | INFO     | __main__:main:200 -   Poly wallet:     0x830447C87C893b19d97d9f1405E08F8d6480542F
+2026-04-08 21:12:48 | INFO     | __main__:main:201 -   Kalshi key ID:   808df12a-b2aa-4206-8338-5c05d5abd399
+2026-04-08 21:12:48 | INFO     | __main__:main:202 -   DB:              arb.db
+2026-04-08 21:12:48 | INFO     | __main__:main:203 -   Min profit:      2.0% / $0.5
+2026-04-08 21:12:48 | INFO     | __main__:main:204 -   Max bet size:    $50.0
+2026-04-08 21:12:48 | INFO     | __main__:main:205 -   DRY RUN:         YES
+2026-04-08 21:12:48 | INFO     | __main__:main:206 - ============================================================
+2026-04-08 21:12:48 | WARNING  | __main__:main:209 - DRY_RUN=true — no real orders will be placed
+2026-04-08 21:12:48 | INFO     | db:init_db:180 - Database initialised at arb.db
+2026-04-08 21:12:48 | INFO     | __main__:fetch_and_match_loop:155 - Starting fetch & match cycle...
+2026-04-08 21:12:48 | INFO     | polymarket_fetcher:fetch_new_poly_markets:204 - Fetching Polymarket markets via Polymarket API…
+2026-04-08 21:12:48 | INFO     | kalshi_fetcher:fetch_new_kalshi_markets:235 - Fetching Kalshi markets…
+2026-04-08 21:12:48 | DEBUG    | polymarket_fetcher:fetch_poly_markets:111 - Fetching Polymarket markets for sport=ucl (tag_id=100977)…
+2026-04-08 21:12:48 | DEBUG    | kalshi_fetcher:fetch_all_kalshi_markets:152 - Fetching Kalshi markets for ucl (series_ticker=KXUCLGAME)…
+2026-04-08 21:12:49 | DEBUG    | polymarket_fetcher:fetch_poly_markets:129 - Polymarket: fetched 18 markets so far (offset=0)
+2026-04-08 21:12:49 | INFO     | polymarket_fetcher:fetch_poly_markets:136 - Polymarket: 18 total active markets fetched
+2026-04-08 21:12:49 | INFO     | polymarket_fetcher:fetch_new_poly_markets:226 - Adding 18 new Polymarket markets…
+2026-04-08 21:12:49 | INFO     | polymarket_fetcher:fetch_new_poly_markets:253 - Polymarket: 18 new markets found
+2026-04-08 21:12:49 | DEBUG    | kalshi_fetcher:fetch_all_kalshi_markets:171 - Kalshi ucl page 1 fetched with 18 markets.
+2026-04-08 21:12:49 | DEBUG    | kalshi_fetcher:fetch_all_kalshi_markets:181 - Kalshi fetching done for ucl.
+2026-04-08 21:12:49 | INFO     | kalshi_fetcher:fetch_all_kalshi_markets:186 - Kalshi: 18 total open markets fetched.
+2026-04-08 21:12:49 | INFO     | kalshi_fetcher:fetch_new_kalshi_markets:261 - Adding 18 new Kalshi markets…
+2026-04-08 21:12:49 | INFO     | kalshi_fetcher:fetch_new_kalshi_markets:280 - Kalshi: 18 new markets added.
+2026-04-08 21:12:49 | INFO     | __main__:fetch_and_match_loop:161 - Fetched 18 new poly markets, 18 new kalshi markets
+2026-04-08 21:12:49 | INFO     | market_matcher:run_market_matcher:113 - Manual matcher: nothing to match (0 poly, 0 kalshi unmatched)
+2026-04-08 21:12:49 | INFO     | __main__:fetch_and_match_loop:165 - Match summary: {'confirmed': 0, 'candidates': 0, 'skipped': 0}
+2026-04-08 21:12:49 | INFO     | __main__:run_cleanup:55 - Running cleanup cycle...
+2026-04-08 21:12:50 | INFO     | __main__:run_cleanup:136 - Cleanup done: 6 poly, 0 kalshi, 0 pairs deactivated
+2026-04-08 21:12:50 | INFO     | __main__:fetch_and_match_loop:174 - Fetch & match cycle complete.
+2026-04-08 21:12:50 | INFO     | ws_monitor:_init_orderbooks:81 - Initialising orderbooks via REST for 18 pairs...
+2026-04-08 21:12:52 | INFO     | ws_monitor:_init_orderbooks:128 - REST initialization done — 36 poly tokens, 18 kalshi markets pre-loaded
+2026-04-08 21:12:52 | INFO     | ws_monitor:run_ws_monitor:658 - WS monitor starting with 18 matched pairs
+2026-04-08 21:12:52 | INFO     | ws_monitor:_run_poly_ws:494 - Connecting to Polymarket WS (36 tokens)...
+2026-04-08 21:12:52 | INFO     | ws_monitor:_run_kalshi_ws:558 - Connecting to Kalshi WS (18 tickers)...
+2026-04-08 21:12:53 | INFO     | ws_monitor:_run_poly_ws:502 - Polymarket WS subscribed
+2026-04-08 21:12:53 | INFO     | ws_monitor:_run_kalshi_ws:581 - Kalshi WS subscribed to 18 tickers
+2026-04-08 21:36:22 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=8 dir=B spread=0.0200 | kalshi YES @ 0.39 + polymarket NO @ 0.59
+2026-04-08 21:36:22 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=B contracts=84 expected_profit=$1.6800 pair=8
+2026-04-08 21:36:22 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 84 contracts @ 0.59 | Kalshi YES 84 contracts @ 0.39
+2026-04-08 21:36:57 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=8 dir=B spread=0.0300 | kalshi YES @ 0.38 + polymarket NO @ 0.59
+2026-04-08 21:36:57 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=B contracts=65 expected_profit=$1.9500 pair=8
+2026-04-08 21:36:57 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 65 contracts @ 0.59 | Kalshi YES 65 contracts @ 0.38
+2026-04-08 21:43:58 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=17 dir=A spread=0.0300 | polymarket YES @ 0.4 + kalshi NO @ 0.57
+2026-04-08 21:43:58 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.18 below min — skipping pair=17 | DEBUG HELP: yes_ask_volume=89977.92 no_ask_volume=30.0 yes_price=0.4 no_price=0.57
+2026-04-08 21:45:28 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=17 dir=A spread=0.0500 | polymarket YES @ 0.28 + kalshi NO @ 0.67
+2026-04-08 21:45:28 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=35 expected_profit=$1.7500 pair=17
+2026-04-08 21:45:28 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 35 contracts @ 0.28 | Kalshi NO 35 contracts @ 0.67
+2026-04-08 21:45:41 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=10 dir=A spread=0.0300 | polymarket YES @ 0.21 + kalshi NO @ 0.76
+2026-04-08 21:45:41 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.06 below min — skipping pair=10 | DEBUG HELP: yes_ask_volume=105.0 no_ask_volume=12.0 yes_price=0.21 no_price=0.76
+2026-04-08 21:46:12 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=10 dir=A spread=0.0300 | polymarket YES @ 0.21 + kalshi NO @ 0.76
+2026-04-08 21:46:12 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.06 below min — skipping pair=10 | DEBUG HELP: yes_ask_volume=105.0 no_ask_volume=12.0 yes_price=0.21 no_price=0.76
+2026-04-08 21:47:08 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0300 | polymarket YES @ 0.32 + kalshi NO @ 0.65
+2026-04-08 21:47:08 | DEBUG    | ws_monitor:_check_and_execute:300 - Sizing: 0 contracts — skipping pair=12
+2026-04-08 21:48:12 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=11 dir=B spread=0.0200 | kalshi YES @ 0.39 + polymarket NO @ 0.59
+2026-04-08 21:48:12 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.04 below min — skipping pair=11 | DEBUG HELP: yes_ask_volume=14.0 no_ask_volume=719.0 yes_price=0.39 no_price=0.59
+2026-04-08 21:48:28 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=17 dir=A spread=0.0200 | polymarket YES @ 0.13 + kalshi NO @ 0.85
+2026-04-08 21:48:28 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.1 below min — skipping pair=17 | DEBUG HELP: yes_ask_volume=90043.4 no_ask_volume=26.0 yes_price=0.13 no_price=0.85
+2026-04-08 21:49:12 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=11 dir=B spread=0.0300 | kalshi YES @ 0.38 + polymarket NO @ 0.59
+2026-04-08 21:49:12 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.06 below min — skipping pair=11 | DEBUG HELP: yes_ask_volume=10.0 no_ask_volume=719.0 yes_price=0.38 no_price=0.59
+2026-04-08 21:49:28 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=17 dir=A spread=0.0200 | polymarket YES @ 0.13 + kalshi NO @ 0.85
+2026-04-08 21:49:28 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=58 expected_profit=$1.1600 pair=17
+2026-04-08 21:49:28 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 58 contracts @ 0.13 | Kalshi NO 58 contracts @ 0.85
+2026-04-08 21:49:58 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=17 dir=A spread=0.0200 | polymarket YES @ 0.12 + kalshi NO @ 0.86
+2026-04-08 21:49:58 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=58 expected_profit=$1.1600 pair=17
+2026-04-08 21:49:58 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 58 contracts @ 0.12 | Kalshi NO 58 contracts @ 0.86
+2026-04-08 21:56:42 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0300 | polymarket YES @ 0.42 + kalshi NO @ 0.55
+2026-04-08 21:56:42 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=63 expected_profit=$1.8900 pair=12
+2026-04-08 21:56:42 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 63 contracts @ 0.42 | Kalshi NO 63 contracts @ 0.55
+2026-04-08 22:12:41 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=18 dir=B spread=0.0400 | kalshi YES @ 0.58 + polymarket NO @ 0.38
+2026-04-08 22:12:41 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.28 below min — skipping pair=18 | DEBUG HELP: yes_ask_volume=35.0 no_ask_volume=92753.29 yes_price=0.58 no_price=0.38
+2026-04-08 22:27:48 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:27:48 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=50 expected_profit=$1.0000 pair=12
+2026-04-08 22:27:48 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 50 contracts @ 0.32 | Kalshi NO 50 contracts @ 0.66
+2026-04-08 22:28:22 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:28:22 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=50 expected_profit=$1.0000 pair=12
+2026-04-08 22:28:22 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 50 contracts @ 0.32 | Kalshi NO 50 contracts @ 0.66
+2026-04-08 22:28:53 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:28:53 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=50 expected_profit=$1.0000 pair=12
+2026-04-08 22:28:53 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 50 contracts @ 0.32 | Kalshi NO 50 contracts @ 0.66
+2026-04-08 22:29:24 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:29:24 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=50 expected_profit=$1.0000 pair=12
+2026-04-08 22:29:24 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 50 contracts @ 0.32 | Kalshi NO 50 contracts @ 0.66
+2026-04-08 22:29:54 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:29:54 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=50 expected_profit=$1.0000 pair=12
+2026-04-08 22:29:54 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 50 contracts @ 0.32 | Kalshi NO 50 contracts @ 0.66
+2026-04-08 22:30:24 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:30:24 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=50 expected_profit=$1.0000 pair=12
+2026-04-08 22:30:24 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 50 contracts @ 0.32 | Kalshi NO 50 contracts @ 0.66
+2026-04-08 22:30:54 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:30:54 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=50 expected_profit=$1.0000 pair=12
+2026-04-08 22:30:54 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 50 contracts @ 0.32 | Kalshi NO 50 contracts @ 0.66
+2026-04-08 22:31:26 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:31:26 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=46 expected_profit=$0.9200 pair=12
+2026-04-08 22:31:26 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 46 contracts @ 0.32 | Kalshi NO 46 contracts @ 0.66
+2026-04-08 22:31:44 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=18 dir=B spread=0.0200 | kalshi YES @ 0.9 + polymarket NO @ 0.08
+2026-04-08 22:31:44 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=B contracts=55 expected_profit=$1.1000 pair=18
+2026-04-08 22:31:44 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 55 contracts @ 0.08 | Kalshi YES 55 contracts @ 0.9
+2026-04-08 22:31:56 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:31:56 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=46 expected_profit=$0.9200 pair=12
+2026-04-08 22:31:56 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 46 contracts @ 0.32 | Kalshi NO 46 contracts @ 0.66
+2026-04-08 22:32:26 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:32:26 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=34 expected_profit=$0.6800 pair=12
+2026-04-08 22:32:26 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 34 contracts @ 0.32 | Kalshi NO 34 contracts @ 0.66
+2026-04-08 22:33:27 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:33:27 | INFO     | ws_monitor:_check_and_execute:319 - Executing | dir=A contracts=34 expected_profit=$0.6800 pair=12
+2026-04-08 22:33:27 | INFO     | ws_monitor:_check_and_execute:322 - [DRY_RUN] Poly BUY 34 contracts @ 0.32 | Kalshi NO 34 contracts @ 0.66
+2026-04-08 22:33:57 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:33:57 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.22 below min — skipping pair=12 | DEBUG HELP: yes_ask_volume=719.0 no_ask_volume=55.0 yes_price=0.32 no_price=0.66
+2026-04-08 22:34:28 | DEBUG    | ws_monitor:_check_and_execute:288 - Arb found | pair=12 dir=A spread=0.0200 | polymarket YES @ 0.32 + kalshi NO @ 0.66
+2026-04-08 22:34:28 | DEBUG    | ws_monitor:_check_and_execute:305 - Sizing: profit $0.3 below min — skipping pair=12 | DEBUG HELP: yes_ask_volume=719.0 no_ask_volume=79.0 yes_price=0.32 no_price=0.66
+2026-04-08 22:57:23 | INFO     | __main__:_handle_signal:185 - Signal 2 received — shutting down...
